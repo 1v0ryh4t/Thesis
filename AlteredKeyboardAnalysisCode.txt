@@ -1,0 +1,107 @@
+//testing if custom functions work
+function DOUBLE(num){
+  console.log("test");
+  return num*2;
+}
+
+var horizboard = [['1','2','3','4','5','6','7','8','9','0','q','w','e','r','t','y','u','i','o','p'],
+                  ['a','s','d','f','g','h','j','k','l','z','x','c','v','b','n','m']];
+var vertboard  = [['1','2','3','4','5','q','w','e','r','t','a','s','d','f','g','z','x','c','v'],
+                  ['6','7','8','9','0','y','u','i','o','p','h','j','k','l','b','n','m']];
+var standboard = [['1','2','3','4','5','6','7','8','9','0'],
+                  ['q','w','e','r','t','y','u','i','o','p'],
+                  ['a','s','d','f','g','h','j','k','l'],
+                  ['z','x','c','v','b','n','m']];
+
+
+/*
+ * this function determines the amount of jumps from one segment to another
+ *
+ */
+function TransverseAmount(data,slice){
+  currSeg = null;
+  nextSeg = null;
+  jumpAmnt = 0;
+
+  for (i = 0;i<data.length-1;i++){
+    currSeg = seg(data[i],slice);
+    nextSeg = seg(data[i+1],slice);
+    if(currSeg != nextSeg)
+      jumpAmnt++;
+  }
+  return jumpAmnt;
+}
+
+/*
+ *takes a character and determines which segment its on for a keyboard. returns 0 for left/top segment, and 1 for right/bottom segment
+ */
+//private. Don't call this
+function seg(char,slice){
+
+  if(slice == "Vertical"){
+    for (j = 0; j<vertboard[0].length; j++){//is slice[i] in board segment 0?
+      if(char == vertboard[0][j])
+        return 0;
+    }
+    for (j = 0; j<vertboard[1].length; j++){//is slice[i] in board segment 1?
+      if(char == vertboard[1][j])
+        return 1;
+    }
+  }
+  if(slice == "Horizontal"){
+    for (j = 0; j<horizboard[0].length; j++){//is slice[i] in board segment 0?
+      if(char == horizboard[0][j])
+        return 0;
+    }
+    for (j = 0; j<horizboard[1].length; j++){//is slice[i] in board segment 1?
+      if(char == horizboard[1][j])
+        return 1;
+    }
+  }
+}
+
+function Entropy(data){
+  //var data = "y7qz7493";
+  var entropString = null;
+  var currSeg = null;
+  var nextSeg = null;
+
+  var currNumx = null;
+  var currNumy = null;
+
+  var nextNumx = null;
+  var nextNumy = null;
+
+  for (i = 0;i<data.length-1;i++){
+    currSeg = data[i]; //grab 2 letters
+    nextSeg = data[i+1];
+
+    //find its place on the board
+    for (l = 0;l<standboard.length;l++){
+       var board = standboard[l];
+       for (j = 0;j<board.length;j++){
+         if(currSeg == board[j]){
+           currNumx = l;
+           currNumy = j;
+         }
+         if(nextSeg == board[j]){
+           nextNumx = l;
+           nextNumy = j;
+         }
+       }
+     }
+
+    //judge how far apart the letters are
+    dist = Math.sqrt(Math.pow(Math.abs(currNumx-nextNumx),2) + Math.pow(Math.abs(currNumy-nextNumy),2));
+
+    //truncate dist
+    dist = Math.trunc(dist);
+    if (entropString == null)
+     entropString = dist+',';
+    else
+     entropString += dist+',';
+  }
+  //chop off final comma
+  entropString = entropString.substring(0, entropString.length-1);
+  return entropString;
+}

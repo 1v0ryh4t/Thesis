@@ -1,2 +1,0 @@
-C:\Users\ARVR\HoloHelloWorld\obj\Release\MixedRealityToolkit.Examples.Demos.Utilities.InspectorFields.Inspectors.csprojAssemblyReference.cache
-C:\Users\ARVR\HoloHelloWorld\obj\Release\MixedRealityToolkit.Examples.Demos.Utilities.InspectorFields.Inspectors.csproj.CoreCompileInputs.cache

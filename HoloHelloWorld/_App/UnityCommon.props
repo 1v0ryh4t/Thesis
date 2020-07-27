@@ -1,9 +1,0 @@
-﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-    <PropertyGroup>
-        <UnityWSASolutionName>HoloHelloWorld</UnityWSASolutionName>
-        <UnityWSASolutionDir>E:\Unity\UnityProjects\HoloHelloWorld\_App\</UnityWSASolutionDir>
-        <UnityProjectDir>E:\Unity\UnityProjects\HoloHelloWorld\</UnityProjectDir>
-        <UnityWSAPlayerDir>C:\Program Files\Unity\Hub\Editor\2018.4.2f1\Editor\Data\PlaybackEngines\MetroSupport\</UnityWSAPlayerDir>
-        <UnityWSAToolsDir>$(UnityWSASolutionDir)Unity\Tools\</UnityWSAToolsDir>
-    </PropertyGroup>
-</Project>

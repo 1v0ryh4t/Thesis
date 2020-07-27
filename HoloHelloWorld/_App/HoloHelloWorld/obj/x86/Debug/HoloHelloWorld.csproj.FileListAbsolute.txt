@@ -1,2 +1,0 @@
-E:\Unity\UnityProjects\HoloHelloWorld\_App\HoloHelloWorld\obj\x86\Debug\HoloHelloWorld.csprojAssemblyReference.cache
-E:\Unity\UnityProjects\HoloHelloWorld\_App\HoloHelloWorld\obj\x86\Debug\HoloHelloWorld.csproj.CoreCompileInputs.cache

@@ -1,1 +1,0 @@
-C:\Users\ARVR\HoloHelloWorld\obj\Release\MixedRealityToolkit.Examples.Demos.UX.Interactables.csproj.CoreCompileInputs.cache

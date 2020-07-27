@@ -1,0 +1,1 @@
+C:\Users\ARVR\HoloHelloWorld\obj\Release\Microsoft.MixedReality.Toolkit.SDK.Inspectors.csproj.CoreCompileInputs.cache
